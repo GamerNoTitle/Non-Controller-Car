@@ -21,12 +21,18 @@ wiringpi.softPwmWrite(6,0)
 def forward(speed):
     if speed >=100:
         speed=100
-    elif speed <=0:
-        speed=0
-    wiringpi.softPwmWrite(1,0)
-    wiringpi.softPwmWrite(4,speed)
-    wiringpi.softPwmWrite(5,0)
-    wiringpi.softPwmWrite(6,speed)
+        wiringpi.softPwmWrite(1,0)
+        wiringpi.softPwmWrite(4,speed)
+        wiringpi.softPwmWrite(5,0)
+        wiringpi.softPwmWrite(6,speed)
+    elif speed<0:
+        speed=abs(speed)
+        wiringpi.softPwmWrite(1,speed)
+        wiringpi.softPwmWrite(4,0)
+        wiringpi.softPwmWrite(5,speed)
+        wiringpi.softPwmWrite(6,0)
+    #elif speed <=0:
+    #    speed=0
 
 #while 1:
 #   forward(100)

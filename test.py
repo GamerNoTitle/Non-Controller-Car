@@ -1,6 +1,8 @@
-import wiringpi
+import distance
 import time
+import motion as mv
 while 1:
-    wiringpi.softPwmWrite(4,100)
+    #speed=int(distance.dis()*0.9)
+    mv.forward(-100)
     print("testing")
-    time.sleep(0.15)
+    time.sleep(0.1)
