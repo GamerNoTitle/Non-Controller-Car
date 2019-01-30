@@ -16,7 +16,6 @@ def dis():
     t2=time.time()
     s=(t2-t1)*34000/2
     print (s)
-    print(" cm")
     return s
 wiringpi.wiringPiSetup()
 wiringpi.pinMode(28,1)

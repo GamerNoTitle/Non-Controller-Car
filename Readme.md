@@ -38,7 +38,7 @@ wiringpi.pinMode(28,1)
 wiringpi.pinMode(29,0)
 while 1:
     print(s)
-    time.sleep(0.15)
+    time.sleep(0.15)		#distance.py文件内做成了注释，在main中导入
 ```
 
 此处利用了``超声波``测距，就是标了红圈的这个玩意
@@ -91,8 +91,10 @@ s=0.0
 while 1:
     s=distance.dis()
     if s<=80 and s>50:
-        mv.forward(50)
+        speed=int(distance.dis()*0.9)
+        mv.forward(speed)
     elif s<=50 and s>30:
+        speed=int(distance.dis()*0.5)
         mv.forward(30)
     elif s<=30:
         mv.forward(0)
