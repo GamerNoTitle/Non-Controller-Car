@@ -9,7 +9,7 @@ while 1:
         mv.forward(speed)
     elif s<=50 and s>30:
         speed=int(distance.dis()*0.5)
-        mv.forward(30)
+        mv.forward(speed)
     elif s<=30:
         mv.forward(0)
         break
